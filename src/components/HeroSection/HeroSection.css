@@ -1,0 +1,59 @@
+.hero-section {
+    background-color: #0b1221;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .hero-header {
+    margin-bottom: 10px;
+  }
+  
+  .hero-tagline {
+    font-size: 14px;
+    color: #ffffff;
+    background: #232e45;
+    padding: 10px 10px;
+    border-radius: 20px;
+    font-weight: 200;
+  }
+  
+  .primary__title {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+  
+  .hero-description {
+    font-size: 16px;
+    color: #b8b8b8;
+    margin: 15px auto 30px;
+    max-width: 700px;
+  }
+  
+  .upload-button-container {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  .upload-button {
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-button:hover {
+    background-color: #5cc85c;
+  }
+  
+  .upload-icon {
+    font-size: 18px;
+  }
+  

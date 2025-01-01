@@ -1,0 +1,53 @@
+.background-remover-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+  }
+  
+  .image-section {
+    position: relative;
+    width: 50%;
+  }
+  
+  .image-wrapper {
+    position: relative;
+    width: 550px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .demo-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 80%;
+    width: 80%;
+    border: 5px solid #6c63ff; /* Purple border */
+    border-radius: 15px;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .text-section {
+    flex: 1;
+    color: #fff;
+  }
+  
+  .text-section h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .text-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  

@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import ImageResult from './pages/ImageResult'
 import Subscription from './pages/Subscription'
 import Navbar from './components/Navbar/Navbar'
+import Footer from './components/Footer/Footer'
 
 const App = () => {
   console.log("App is rendering!");
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/imageresult' element={<ImageResult/>} />
         <Route path='/subscription' element={<Subscription/>} />
       </Routes>
+      <Footer />
     </div>
   )
 }

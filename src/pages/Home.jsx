@@ -14,7 +14,6 @@ const Home = () => {
       <BgSlider />
       <Testimonials />
       <HeroSection />
-      <Footer />
     </div>
   )
 }

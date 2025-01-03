@@ -1,0 +1,95 @@
+/* General Styles */
+.bg-remover {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.bg-remover-header {
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #b8b8b8;
+  margin-top: 10px;
+}
+
+/* Content Layout */
+.bg-remover-content {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Align items vertically */
+  flex-wrap: wrap;
+  gap: 60px; /* Reduce the gap between elements */
+}
+
+.image-preview img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  margin-top: 20px;
+}
+
+/* Hero Section */
+.hero-container {
+  position: relative;
+  background-color: #232e45;
+  padding: 20px 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Upload Box */
+.upload-box {
+  border: 2px dashed #4827ef;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  height: 300px; /* Set height for equal margins */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute content evenly */
+  box-sizing: border-box;
+}
+
+.upload-instructions {
+  font-size: 16px;
+  color: #b8b8b8;
+  margin-bottom: 10px;
+  margin-top: 32%;
+}
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6bd66b;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.supported-formats {
+  font-size: 14px;
+  color: #b8b8b8;
+  margin-top: auto;
+  padding-top: 10px;
+}

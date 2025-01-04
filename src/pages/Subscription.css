@@ -1,0 +1,119 @@
+.pricing-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .toggle-btn {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+  
+  .toggle-btn.active {
+    background: #000;
+    color: #fff;
+  }
+  
+  .pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .card {
+    background: #232e45;
+    border: 1px solid #6767f9;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 250px;
+    flex: 1;
+    text-align: left;
+    position: relative;
+  }
+  
+  .popular {
+    border: 2px solid #3b3bf4;
+  }
+  
+  .plan-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .plan-description {
+    color: #b8b8b8;
+    font-size: 14px;
+  }
+  
+  .price-header {
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .price {
+    font-size: 24px;
+    color: #ffffff;
+  }
+  
+  .currency {
+    font-size: 12px;
+    color: #e4e3e3;
+  }
+  
+  .features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .features li {
+    margin: 10px 0;
+  }
+  
+  .cta-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .cta-btn:hover {
+    background: #333;
+  }
+  
+  .upload-button {
+    background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%); /* Light blue to dark blue gradient */
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 25px; /* Radial button */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Optional shadow */
+  }

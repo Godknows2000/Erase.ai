@@ -17,19 +17,30 @@ const App = () => {
     },
     content: {
       flex: 1, // Allow this section to grow and take up available space
-      padding: '20px', // Optional padding for spacing
+      overflowY: 'auto', // Enable scrolling for the content
+      padding: '0px', // Optional padding for spacing
     },
     footer: {
-      backgroundColor: '#0b1221', // Example footer styling
+      backgroundColor: '#0b1221', // Footer background color
       color: '#ffffff',
       textAlign: 'center',
       padding: '10px 20px',
+      marginTop: 'auto', // Ensures the footer sticks to the bottom
+    },
+    navbar: {
+      position: 'sticky',
+      top: 0, // Keeps navbar at the top when scrolling
+      backgroundColor: '#080c16', // Navbar background color
+      zIndex: 1000, // Ensures navbar stays on top of the content
+      width: '100%',
     },
   };
 
   return (
     <div style={styles.appContainer}>
-      <Navbar />
+      <div style={styles.navbar}>
+        <Navbar />
+      </div>
 
       <div style={styles.content}>
         <Routes>
@@ -41,7 +52,7 @@ const App = () => {
 
       <Footer style={styles.footer} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

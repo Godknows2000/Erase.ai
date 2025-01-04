@@ -1,61 +1,107 @@
 /* Navbar container */
 .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #080c16; /* White background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
-  }
-  
-  /* Logo styling */
-  .logo h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    color: #ffffff; /* Dark text color */
-  }
-  
-  /* Sign Up button container */
-  .signup-button-container {
-    display: flex;
-    align-items: center;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #080c16; /* Default background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.24) !important;
+}
+
+.navbar-container.signed-in {
+background-color: white;
+}
+
+/* Logo styling */
+.logo h1 {
+font-size: 24px;
+font-weight: bold;
+margin: 0;
+}
+
+/* Links styling */
+.navbar-links {
+display: flex;
+gap: 20px;
+}
+
+.navbar-link {
+  color: #000; /* Fallback color */
+  text-decoration: none;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.navbar-link:hover {
+  background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-link.active-link {
+  background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  border-bottom: 2px solid #3b3bf4; /* Solid blue border for underline */
+}
+
+
+/* Sign Up button container */
+.signup-button-container {
+display: flex;
+align-items: center;
+}
+
 /* Sign Up button styling */
 .signup-button {
-    background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%); /* Light blue to dark blue gradient */
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px; /* Radial button */
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Optional shadow */
-  }
-  
-  /* Button hover effect */
-  .signup-button:hover {
-    background: linear-gradient(135deg, #010747, #013bf7); /* Reversed gradient on hover */
-  }
-  
-  /* Icon in the button */
-  .signup-icon {
-    margin-right: 8px; /* Space between icon and text */
-  }  
-  
-  /* Optional - Add responsive adjustments */
-  @media (max-width: 768px) {
-    .navbar-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .signup-button {
-      margin-top: 10px;
-    }
-  }
-  
+background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%); /* Light blue to dark blue gradient */
+color: white;
+font-size: 16px;
+padding: 10px 20px;
+border: none;
+border-radius: 10px; /* Radial button */
+display: flex;
+align-items: center;
+cursor: pointer;
+transition: background 0.3s ease;
+box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Optional shadow */
+}
+
+/* Button hover effect */
+.signup-button:hover {
+background: linear-gradient(135deg, #010747, #013bf7); /* Reversed gradient on hover */
+}
+
+/* Icon in the button */
+.signup-icon {
+margin-right: 8px; /* Space between icon and text */
+}
+
+/* User circle styling */
+.user-circle {
+width: 40px;
+height: 40px;
+background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%); /* Example gradient */
+color: white;
+font-size: 18px;
+font-weight: 600;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-transform: uppercase;
+}
+
+/* Optional - Add responsive adjustments */
+@media (max-width: 768px) {
+.navbar-container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-button {
+  margin-top: 10px;
+}
+}

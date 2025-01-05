@@ -94,7 +94,6 @@ justify-content: center;
 text-transform: uppercase;
 }
 
-/* Optional - Add responsive adjustments */
 @media (max-width: 768px) {
 .navbar-container {
   flex-direction: column;

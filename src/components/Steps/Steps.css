@@ -1,53 +1,37 @@
 .card-section {
-    padding: 50px 20px;
-    background-color: #131b2b; /* Dark background */
-    color: #fff;
-    width: 100%;
-  }
-  
-#step .step__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-  }
-  
-  @media (max-width: 1024px) {
-    #step .step__container {
-      grid-template-columns: 1fr;
-    }
-    #step .step__container .step__card {
-      width: 80%;
-      padding: 2rem;
-      margin: 0 auto;
-    }
-    #step .step__content {
-      padding: 1rem;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    #step .step__container {
-      gap: 1rem;
-    }
-    #step .step__container .step__card {
-      width: 100%;
-      padding: 2rem 1rem;
-    }
-  }
-  
+  padding: 10px 20px;
+  background-color: #131b2b;
+  color: #fff;
+  width: 100%;
+}
+
+#step .card {
+  border-radius: 12px;
+  box-shadow: 0 1px 12px rgba(2, 76, 200, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #1a2337;
+  flex: 1;
+  max-width: 400px;
+}
+
+#step .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(2, 76, 200, 0.7);
+  border: 1px solid #024CC8;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
   #step .card {
-    position: relative; /* Ensures proper stacking if needed */
-    border-radius: 12px; /* Smooth rounded corners */
-    box-shadow: 0 1px 12px var(--color-primary);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-    width: calc(33.333% - 20px);
-    padding: 20px;
-    background-color: #1a2337;
+    max-width: 90%;
+    margin: 0 auto;
   }
-  
-  #step .card:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    box-shadow: 0 6px 10px rgba(2, 76, 200, 0.7); /* Stronger shadow on hover, evenly applied */
-    border: 1px solid var(--color-primary); /* Maintain the border */
+}
+
+@media (max-width: 768px) {
+  #step .card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 15px;
   }
-  
+}

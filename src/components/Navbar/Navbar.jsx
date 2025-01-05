@@ -57,7 +57,7 @@ const Navbar = () => {
             isActiveLink('/upload') ? 'active-link' : ''
           }`}
         >
-          Upload Image
+          Uploaded Images
         </Link>
         <Link
           to="/resources"

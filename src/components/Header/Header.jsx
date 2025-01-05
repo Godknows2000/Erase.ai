@@ -2,8 +2,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import './Header.css';
-import header_img from "../../assets/header_img.png"
-import { FaUpload } from 'react-icons/fa';
+import header_img from "../../assets/header_img.png";
 import { FiUpload } from "react-icons/fi";
 
 const Header = () => {
@@ -27,7 +26,7 @@ const Header = () => {
 
   return (
     <header id="header" className="blur-effect" ref={container}>
-      <div className="section__wrapper header__container">
+<div className="section__wrapper header__container">
         <div className="column intro__container blur-effect">
           <div className="header__info">
             <div className="header__info__middle">
@@ -50,9 +49,10 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="column profile__wrapper">
+                {/* Image Section */}
+        <div className="profile__wrapper order-1 lg:order-none">
           <div className="profile__photo__container">
-            <img src={header_img} className="profile__photo" alt="" />
+            <img src={header_img} className="profile__photo" alt="Header" />
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@
     -webkit-backdrop-filter: blur(10px);
     z-index: -1;
   }
-  
+
   #header .header__container {
     position: relative;
     display: flex;
@@ -66,8 +66,9 @@
   
   #header .header__description {
     font-size: 15px;
+    text-align: center;
+    margin-top: 15px;
     font-weight: 500;
-    margin: 15px 0;
   }
   
   #header .header__info__bottom {
@@ -97,8 +98,14 @@
   }
   
   @media (max-width: 1100px) {
+    #header .header__container {
+      flex-direction: row;
+      align-items: stretch;
+    }
     #header .header__title {
-      font-size: 32px;
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
     }
   }
   
@@ -106,6 +113,11 @@
     #header {
       min-height: auto;
     }
+    #header .upload-button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }    
     #header .blur-effect::before {
       display: none;
     }
@@ -132,6 +144,27 @@
       width: 45%;
       padding: 15px;
     }
+  }
+
+  @media (min-width: 768px) {
+    /* #header .header__title {
+      font-size: 36px;
+      text-align: start;
+    } */
+    #header .header__description {
+      font-size: 18px;
+      text-align: start;
+    }
+    #header .profile__photo__container {
+      width: 400px;
+      height: 400px;
+    }
+    #header .upload-button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
   }
 
   .upload-button-container {

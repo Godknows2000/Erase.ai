@@ -161,7 +161,7 @@
     }
     #header .upload-button-container {
       display: flex;
-      justify-content: center;
+      justify-content: start;
       margin-top: 20px;
     }
     

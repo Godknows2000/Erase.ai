@@ -1,106 +1,194 @@
-/* Navbar container */
-.navbar-container {
+.navbar__container {
   display: flex;
+  align-items: stretch;
   justify-content: space-between;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.navbar__container.visible {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--color-ui-2);
+}
+
+.navbar__container .logo__container {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  cursor: pointer;
+  font-size: 35px;
+}
+
+.navbar__container .tab__group {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.navbar__container .tab__item {
+  position: relative;
   padding: 10px 20px;
-  background-color: #080c16; /* Default background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.24) !important;
-}
-
-.navbar-container.signed-in {
-background-color: white;
-}
-
-/* Logo styling */
-.logo h1 {
-font-size: 24px;
-font-weight: bold;
-margin: 0;
-}
-
-/* Links styling */
-.navbar-links {
-display: flex;
-gap: 20px;
-}
-
-.navbar-link {
-  color: #000; /* Fallback color */
-  text-decoration: none;
-  font-size: 14px;
-  font-family: sans-serif;
-  font-weight: bold;
-}
-
-.navbar-link:hover {
-  background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.navbar-link.active-link {
-  background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 15px;
   font-weight: 600;
-  border-bottom: 2px solid #3b3bf4; /* Solid blue border for underline */
 }
 
-
-/* Sign Up button container */
-.signup-button-container {
-display: flex;
-align-items: center;
+.navbar__container .tab__item.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-1);
+  border-radius: var(--border-radius-4);
+  animation: drawer 0.5s;
 }
 
-/* Sign Up button styling */
-.signup-button {
-background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%); /* Light blue to dark blue gradient */
-color: white;
-font-size: 16px;
-padding: 10px 20px;
-border: none;
-border-radius: 10px; /* Radial button */
-display: flex;
-align-items: center;
-cursor: pointer;
-transition: background 0.3s ease;
-box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Optional shadow */
+@keyframes drawer {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
-/* Button hover effect */
-.signup-button:hover {
-background: linear-gradient(135deg, #010747, #013bf7); /* Reversed gradient on hover */
-}
-
-/* Icon in the button */
-.signup-icon {
-margin-right: 8px; /* Space between icon and text */
-}
-
-/* User circle styling */
-.user-circle {
-width: 40px;
-height: 40px;
-background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%); /* Example gradient */
-color: white;
-font-size: 18px;
-font-weight: 600;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-.navbar-container {
-  flex-direction: column;
+.navbar__container .nav__buttons__group {
+  display: flex;
   align-items: center;
+  gap: 20px;
 }
 
-.signup-button {
-  margin-top: 10px;
+.navbar__container .menu {
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
 }
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-links .navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar__container .close__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  font-size: 16px;
+  display: none;
+}
+
+.navbar__container .overlay {
+  background: rgba(1, 1, 1, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  z-index: 199;
+  user-select: none;
+  cursor: pointer;
+}
+
+.signup-button-container {
+  display: flex;
+  align-items: center;
+  }
+  
+  /* Sign Up button styling */
+  .signup-button {
+  background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%); /* Light blue to dark blue gradient */
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px; /* Radial button */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Optional shadow */
+  }
+  
+  /* Button hover effect */
+  .signup-button:hover {
+  background: linear-gradient(135deg, #010747, #013bf7); /* Reversed gradient on hover */
+  }
+  
+  /* Icon in the button */
+  .signup-icon {
+  margin-right: 8px; /* Space between icon and text */
+  }
+
+  .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    }
+    .navbar-links .navbar-link:hover {
+      background: linear-gradient(135deg, #010747, #013bf7); /* Gradient */
+      -webkit-background-clip: text; /* Applies gradient to text */
+      -webkit-text-fill-color: transparent; /* Makes text background visible */
+    }
+
+    .navbar-link.active-link {
+      background: linear-gradient(260deg, #2c09f6 0%, #babaf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 600;
+      border-bottom: 1px solid #3b3bf4; /* Solid blue border for underline */
+    }
+
+@media (max-width: 900px) {
+  .navbar__container {
+    background: var(--color-ui-2);
+  }
+  .navbar__container .tab__group {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    min-height: 100vh;
+    background: var(--color-ui-1);
+    top: 0;
+    left: -100%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    z-index: 200;
+    transition: var(--transition);
+    padding-top: 20px;
+  }
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+  }
+  .navbar__container .tab__group.show {
+    left: 0;
+  }
+  .navbar__container .menu {
+    display: block;
+  }
+  .navbar__container .close__btn {
+    display: flex;
+  }
+}
+
+@media (max-width: 900px) {
+
 }

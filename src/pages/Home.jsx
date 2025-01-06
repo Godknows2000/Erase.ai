@@ -91,7 +91,6 @@ const Home = () => {
           <Steps />
           <BgSlider />
           <Testimonials />
-          <HeroSection />
         </>
       )}
       

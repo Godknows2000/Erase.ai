@@ -104,16 +104,77 @@
   }
   
   .upload-button {
-    background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%); /* Light blue to dark blue gradient */
+    background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%);
     color: white;
     font-size: 14px;
     padding: 10px 20px;
     margin-top: 10px;
     border: none;
-    border-radius: 25px; /* Radial button */
+    border-radius: 25px;
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: background 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Optional shadow */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
   }
+
+@media (max-width: 768px) {
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 90%;
+    padding-left: 45px;
+    padding-right: 45px;             
+    font-size: 16px;      
+  }
+
+  .price-header {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .plan-name {
+    font-size: 22px;
+  }
+
+  .plan-description {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 28px;
+  }
+
+  .upload-button {
+    font-size: 16px;
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 95%;
+    padding: 30px;
+  }
+
+  .price-header {
+    font-size: 16px;
+  }
+
+  .plan-name {
+    font-size: 24px;
+  }
+
+  .price {
+    font-size: 32px;
+  }
+
+  .upload-button {
+    font-size: 18px;
+    padding: 15px 25px;
+  }
+}
+  

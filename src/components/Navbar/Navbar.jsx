@@ -1,123 +1,191 @@
-import React, { useState } from 'react';
-import { FaUserPlus } from 'react-icons/fa';
-import { Link, useLocation  } from 'react-router-dom';
+import React, { useEffect, useState, useRef } from 'react';
+import { FaUserPlus, FaTimes } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom';
+import { animateScroll as scroll } from 'react-scroll';
+import { FaBarsStaggered } from 'react-icons/fa6';
+import gsap from 'gsap';
 import "./Navbar.css";
 import { useClerk, useUser } from '@clerk/clerk-react';
 
 const Navbar = () => {
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
+  const container = useRef(null);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+    setVisible(currentScrollPos > 145);
+  };
+
+  const toggleMenu = () => {
+    setShowMenu((prev) => !prev);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (visible) {
+      gsap.fromTo(
+        container.current,
+        { y: -250 },
+        { y: 0, top: 0, zIndex: 100, duration: 0.5 }
+      );
+    }
+  }, [visible]);
+
   const isActiveLink = (path) => {
     const location = useLocation();
-    // Check for an exact match for '/'
-    if (path === '/') {
-      return location.pathname === '/';
-    }
-    return location.pathname.startsWith(path);
+    return path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
   };
 
   const { openSignIn } = useClerk();
   const { signOut } = useClerk();
   const { isSignedIn, user } = useUser();
-  const [showMenu, setShowMenu] = useState(false);
 
-  // Get the user's initials
   const getUserInitials = () => {
     if (user) {
       const firstName = user.firstName || '';
       const lastName = user.lastName || '';
-      const initials = (firstName[0] + (lastName[0] || '')).toUpperCase();
-      return initials;
+      return (firstName[0] + (lastName[0] || '')).toUpperCase();
     }
     return '';
   };
 
-  const toggleMenu = () => setShowMenu((prev) => !prev);
-  
   return (
-    <div className={`navbar-container ${isSignedIn ? 'signed-in' : ''}`} style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+    <nav
+      className={`navbar__container ${visible ? 'visible' : ''}`}
+      ref={container}
+    >
+      {showSidebar && <div className="overlay" onClick={() => setShowSidebar(false)}></div>}
+
       <Link to='/'>
-      <div className="logo flex justify-between mx-4 py-3 lg:mx-22">
-        <h1 className={isSignedIn ? 'text-black' : 'text-white'}>Erase.ai</h1>
-      </div>
+        <div className="logo flex justify-between mx-4 py-3 lg:mx-22">
+          <h1 className={isSignedIn ? 'text-black' : 'text-white'}>Erase.ai</h1>
+        </div>
       </Link>
 
-      {/* Authenticated user links */}
-      {isSignedIn && (
-        <div className="navbar-links">
-          <Link
-            to="/"
-            className={`navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
-              isActiveLink('/') ? 'active-link' : ''
-            }`}
-          >
-            Home
-          </Link>
-        <Link
-          to="/upload"
-          className={`navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
-            isActiveLink('/upload') ? 'active-link' : ''
-          }`}
-        >
-          Uploaded Images
-        </Link>
-        <Link
-          to="/resources"
-          className={`navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
-            isActiveLink('/resources') ? 'active-link' : ''
-          }`}
-        >
-          Resources
-        </Link>
-        <Link
-          to="/subscription"
-          className={`navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
-            isActiveLink('/subscription') ? 'active-link' : ''
-          }`}
-        >
-          Subscription
-        </Link>
-      </div>
-      )}
+      <div className={`tab__group ${showSidebar ? 'show' : ''}`}>
+        <span className="icon__container close__btn" onClick={() => setShowSidebar(false)}>
+          <FaTimes />
+        </span>
 
-      {/* User Circle or Sign Up button */}
-      {isSignedIn ? (
-        <div className="user-container relative">
-          {/* User circle */}
-          <div
-            className="user-circle cursor-pointer"
-            onClick={toggleMenu} // Toggle the dropdown menu
-          >
-            <span>{getUserInitials()}</span>
-          </div>
-
-          {/* Dropdown menu */}
-          {showMenu && (
-            <div
-              className="dropdown-menu absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg"
-              onClick={() => setShowMenu(false)} // Close menu on any click
+{/* Links for authenticated users */}
+{isSignedIn ? (
+          <div className="tab__item">
+            <Link
+              to="/"
+              className={`navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
+                isActiveLink('/') ? 'active-link' : ''
+              }`}
             >
-              <ul>
-                <li className="dropdown-item px-4 py-2 text-black hover:bg-gray-100 cursor-pointer">
-                  Profile
-                </li>
-                <li
-                  className="dropdown-item px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer"
-                  onClick={signOut}
-                >
-                  Logout
-                </li>
-              </ul>
+              Home
+            </Link>
+            <Link
+              to="/upload"
+              className={`navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
+                isActiveLink('/upload') ? 'active-link' : ''
+              }`}
+            >
+              Uploaded Images
+            </Link>
+            <Link
+              to="/resources"
+              className={`navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
+                isActiveLink('/resources') ? 'active-link' : ''
+              }`}
+            >
+              Resources
+            </Link>
+            <Link
+              to="/subscription"
+              className={`navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
+                isActiveLink('/subscription') ? 'active-link' : ''
+              }`}
+            >
+              Subscription
+            </Link>
+          </div>
+        ) : (
+          /* Links for unauthenticated users */
+          <div className="navbar-links">
+            <Link
+              to="/remove-background"
+              className={`tab__item navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
+                isActiveLink('/removeBackground') ? 'active-link' : ''
+              }`}
+            >
+              Remove Background
+            </Link>
+            <Link
+              to="/how-it-works"
+              className={`tab__item navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
+                isActiveLink('/howItWorks') ? 'active-link' : ''
+              }`}
+            >
+              How It Works
+            </Link>
+            <Link
+              to="/subscription"
+              className={`tab__item navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
+                isActiveLink('/subscription') ? 'active-link' : ''
+              }`}
+            >
+              Pricing
+            </Link>
+          </div>
+        )}
+      </div>
+
+      <div className="nav__buttons__group">
+        {isSignedIn ? (
+          <div className="user-container relative">
+            <div
+              className="user-circle cursor-pointer"
+              onClick={toggleMenu}
+            >
+              <span>{getUserInitials()}</span>
             </div>
-          )}
-        </div>
-      ) : (
-        <div className="signup-button-container">
-          <button onClick={() => openSignIn({})} className="signup-button flex items-center sm:px-8">
+
+            {showMenu && (
+              <div
+                className="dropdown-menu absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg"
+                onClick={() => setShowMenu(false)}
+              >
+                <ul>
+                  <li className="dropdown-item px-4 py-2 text-black hover:bg-gray-100 cursor-pointer">
+                    Profile
+                  </li>
+                  <li
+                    className="dropdown-item px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer"
+                    onClick={signOut}
+                  >
+                    Logout
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+        ) : (
+          <button
+            className="signup-button flex items-center sm:px-8"
+            onClick={openSignIn}
+          >
             <FaUserPlus className="signup-icon" />
             Sign Up
           </button>
-        </div>
-      )}
-    </div>
+        )}
+
+        <FaBarsStaggered
+          className="menu"
+          onClick={() => setShowSidebar(!showSidebar)}
+        />
+      </div>
+    </nav>
   );
 };
 

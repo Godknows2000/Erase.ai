@@ -123,6 +123,21 @@
   transition: background 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Optional shadow */
   }
+
+  .user-circle {
+    background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 50px;  /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+    color: white; /* Text color */
+    font-weight: bold; /* Adjust text styling */
+    cursor: pointer;
+    text-align: center;
+  }
+  
   
   /* Button hover effect */
   .signup-button:hover {

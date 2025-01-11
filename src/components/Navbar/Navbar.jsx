@@ -65,7 +65,7 @@ const Navbar = () => {
 
       <Link to='/'>
         <div className="logo flex justify-between mx-4 py-3 lg:mx-22">
-          <h1 className={isSignedIn ? 'text-black' : 'text-white'}>Erase.ai</h1>
+          <h1 className={isSignedIn ? 'text-white' : 'text-white'}>Erase.ai</h1>
         </div>
       </Link>
 
@@ -76,7 +76,7 @@ const Navbar = () => {
 
 {/* Links for authenticated users */}
 {isSignedIn ? (
-          <div className="tab__item">
+          <div className="navbar-links">
             <Link
               to="/"
               className={`navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${

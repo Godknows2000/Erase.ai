@@ -8,7 +8,7 @@ const clerkWebhooks = async (req, res) => {
     try {
         console.log("MONGODB_URI:", process.env.MONGODB_URI);
 
-        const SECRET_KEY = process.env.CLERK_WEBHOOK_SECRET;
+        const SECRET_KEY = process.env.SECRET_KEY;
 
         if (!SECRET_KEY) {
             throw new Error("CLERK_WEBHOOK_SECRET is not defined. Please set the environment variable.");

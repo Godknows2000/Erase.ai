@@ -7,13 +7,13 @@ const connectDB = async () => {
 
     try {
         // Remove deprecated options
-        await mongoose.connect(process.env.MONGODB_URI,{
+        await mongoose.connect(`${process.env.MONGODB_URI}/erase-ai`,{
             serverSelectionTimeoutMS: 5000,
         });
         console.log('Database connection established');
     } catch (error) {
         console.error('Database connection error:', error);
-        process.exit(1); // Exit the application if the database connection fails
+        process.exit(1);
     }
 };
 

@@ -5,6 +5,8 @@ import ImageResult from './pages/ImageResult'
 import Subscription from './pages/Subscription'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   console.log("App is rendering!");
@@ -27,17 +29,18 @@ const App = () => {
       padding: '10px 20px',
       marginTop: 'auto', // Ensures the footer sticks to the bottom
     },
-    navbar: {
-      position: 'sticky',
-      top: 0, // Keeps navbar at the top when scrolling
-      backgroundColor: '#080c16', // Navbar background color
-      zIndex: 1000, // Ensures navbar stays on top of the content
-      width: '100%',
-    },
+    // navbar: {
+    //   position: 'sticky',
+    //   top: 0, // Keeps navbar at the top when scrolling
+    //   backgroundColor: '#080c16', // Navbar background color
+    //   zIndex: 1000, // Ensures navbar stays on top of the content
+    //   width: '100%',
+    // },
   };
 
   return (
     <div style={styles.appContainer}>
+      <ToastContainer position='top-right' />
       <div style={styles.navbar}>
         <Navbar />
       </div>

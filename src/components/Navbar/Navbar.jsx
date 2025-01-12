@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import { FaUserPlus, FaTimes } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
@@ -6,6 +6,7 @@ import { FaBarsStaggered } from 'react-icons/fa6';
 import gsap from 'gsap';
 import "./Navbar.css";
 import { useClerk, useUser } from '@clerk/clerk-react';
+import { AppContext } from '../../context/appContext';
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -38,14 +39,24 @@ const Navbar = () => {
     }
   }, [visible]);
 
+  const location = useLocation();
+
   const isActiveLink = (path) => {
-    const location = useLocation();
     return path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
   };
 
   const { openSignIn } = useClerk();
   const { signOut } = useClerk();
   const { isSignedIn, user } = useUser();
+  const {credit, loadCreditsData} = useContext(AppContext);
+
+  useEffect(() => {
+    if(isSignedIn)
+    {
+      loadCreditsData();
+    }
+
+  }, [isSignedIn]);
 
   const getUserInitials = () => {
     if (user) {

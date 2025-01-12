@@ -28,6 +28,8 @@ const clerkWebhooks = async (req, res) => {
 
         const verifiedPayload = whook.verify(JSON.stringify(payload), headers);
 
+        console.log("Verified Payload:", verifiedPayload);
+
         // Send a response immediately
         res.status(200).json({ success: true });
 

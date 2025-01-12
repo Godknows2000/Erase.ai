@@ -8,18 +8,17 @@ const clerkWebhooks = async (req, res) => {
     try {
         console.log("MONGODB_URI:", process.env.MONGODB_URI);
 
-        const SECRET_KEY = process.env.SECRET_KEY;
+        const SECRET_KEY = process.env.CLERK_WEBHOOK_SECRET;
 
         if (!SECRET_KEY) {
             throw new Error("CLERK_WEBHOOK_SECRET is not defined. Please set the environment variable.");
         }
 
-        console.log('Start now....')
+        console.log('Start now....');
         console.log('CLERK_WEBHOOK_SECRET:', SECRET_KEY);
 
         const whook = new Webhook(SECRET_KEY);
 
-        // Verify the webhook signature
         const payload = req.body;
         const headers = {
             "svix-id": req.headers["svix-id"],
@@ -29,20 +28,14 @@ const clerkWebhooks = async (req, res) => {
 
         const verifiedPayload = whook.verify(JSON.stringify(payload), headers);
 
+        // Send a response immediately
         res.status(200).json({ success: true });
 
-        // Process the verified data
         const { data, type } = verifiedPayload;
 
-        // Acknowledge the webhook quickly
-        // res.status(200).json({ success: true });
-
-        // // Process data asynchronously
-        // const { data, type } = req.body;
-
+        // Process the webhook payload asynchronously
         switch (type) {
             case 'user.created':
-                console.log('Attempting to create user:', data.id);
                 await userModel.create({
                     clerkId: data.id,
                     email: data.email_addresses[0].email_address,
@@ -77,7 +70,11 @@ const clerkWebhooks = async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: error.message });
+
+        // Check if headers are already sent before sending an error response
+        if (!res.headersSent) {
+            res.status(500).json({ success: false, message: error.message });
+        }
     }
 };
 

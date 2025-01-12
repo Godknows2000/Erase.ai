@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import "./Navbar.css";
 import { useClerk, useUser } from '@clerk/clerk-react';
 import { AppContext } from '../../context/appContext';
+import { FaCoins } from 'react-icons/fa';
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -154,9 +155,15 @@ const Navbar = () => {
 
       <div className="nav__buttons__group">
         {isSignedIn ? (
-          <div className="user-container relative">
+          <div className="user-container flex items-center gap-2 sm:gap-7">
+            <button className="credit-tagline flex items-center gap-2 px-4 sm:px-7 sm:py-2.5 shadow-md hover:scale-105 duration-700 transition-all">
+              <FaCoins className="credit-icon w-6 h-6 text-yellow-500" />
+              <p className="text-sm font-medium text-white">
+                Credits: {credit}
+              </p>
+            </button>
             <div
-              className="user-circle cursor-pointer"
+              className="user-circle cursor-pointer w-10 h-10 bg-blue-500 text-white flex items-center justify-center rounded-full text-lg font-bold"
               onClick={toggleMenu}
             >
               <span>{getUserInitials()}</span>
@@ -164,10 +171,10 @@ const Navbar = () => {
 
             {showMenu && (
               <div
-                className="dropdown-menu absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg"
+                className="dropdown-menu absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg border border-gray-200 z-50"
                 onClick={() => setShowMenu(false)}
               >
-                <ul>
+                <ul className="divide-y divide-gray-100">
                   <li className="dropdown-item px-4 py-2 text-black hover:bg-gray-100 cursor-pointer">
                     Profile
                   </li>

@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import bg_slider from "../assets/bg-removal-slider.png";
 import "./ImageResult.css";
 import { IconLucideImagePlus } from '../components/IconLucideImagePlus';
-import { assets } from "../assets/assets"
 import { FiDownload } from 'react-icons/fi';
 import { AppContext } from '../context/appContext';
 

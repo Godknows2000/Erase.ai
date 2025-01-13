@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import bg_slider from "../assets/bg-removal-slider.png";
 import "./ImageResult.css";
 import { IconLucideImagePlus } from '../components/IconLucideImagePlus';
 import { assets } from "../assets/assets"
 import { FiDownload } from 'react-icons/fi';
+import { AppContext } from '../context/appContext';
 
 const ImageResult = () => {
+
+  const { resultImage, image } = useContext(AppContext)
+
+
+
   const styles = {
     buttonContainer: {
       textAlign: "center",
@@ -42,7 +48,7 @@ const ImageResult = () => {
         </p>
       </header>
 
-      <div className="bg-remover-content">
+      {/* <div className="bg-remover-content">
         <div className="image-preview">
           <img
             src={bg_slider}
@@ -54,23 +60,36 @@ const ImageResult = () => {
             <div className="upload-instructions">
               <p>Drag and drop your image here</p>
             </div>
-            <div style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100%",
-              margin: "10px"
-            }}>
-              <button className="upload-button">
-                <IconLucideImagePlus style={styles.icon} /> Upload Image
-              </button>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+                margin: "10px"
+              }}
+            >
+              <div>
+                <input
+                onChange={e => removeBackground(e.target.files[0])}
+                  type="file"
+                  id="upload"
+                  accept='image/*'
+                  hidden
+                />
+              <label className="upload-button" htmlFor="upload">
+                <IconLucideImagePlus style={{ fontSize: '24px' }} /> Upload Image
+              </label>
+              </div>
             </div>
+
             <p className="supported-formats">
               Supported formats: <b>JPG, JPEG, PNG, WebP</b>
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="mx-4 my-3 lg:mx-44 mt-14 min-h-[75vh]">
         <div
           className="rounded-lg px-8 py-6 drop-shadow-sm"
@@ -80,17 +99,17 @@ const ImageResult = () => {
             <div>
               <p className="text-start font-semibold text-white-600 mb-2">Original</p>
               <img
-                className="rounded-md border"
-                src={assets.image_w_bg}
-                alt="Original"
-              />
+                className="rounded-md border-solid"
+                src={image ? URL.createObjectURL(image) : ''}
+                alt="" />
             </div>
 
             <div>
               <p className="text-start font-semibold text-white-600 mb-2">Background Removed</p>
-              <div className='rounded-md border border-gray-300 h-full relative bg-layer overflow-hidden'>
-                <img className="rounded-md border-solid" src={assets.image_wo_bg} alt="Background Removed" />
-                {/* <div className="absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2">
+              <div className={`rounded-md border h-full ${resultImage && 'bg-layer'} border-gray-300 relative overflow-hidden`}>
+                <img className="rounded-md border-solid" src={resultImage ? resultImage : ''} alt="" />
+                {
+                  !resultImage && image && <div className="absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2">
                   <div
                     style={{
                       border: "4px solid #0000ff", // Violet border color
@@ -101,22 +120,23 @@ const ImageResult = () => {
                       animation: "spin 1s linear infinite", // Spinning animation
                     }}
                   ></div>
-                </div> */}
+                </div> 
+                }
                 </div>
               </div>
             </div>
-          <div className='flex justify-center sm:justify-end items-centerflex-wrap gap-4 mt-12'>
-          <button 
-            className="px-8 py-2.5 text-blue-600 text-sm rounded-full hover:scale-105 transition-all duration-700"
-            style={{
-              border: "2px solid #3B82F6", // Border color (blue)
-            }}
-          >
-            Try another Image
-          </button>
+            { resultImage &&  <div className='flex justify-center sm:justify-end items-centerflex-wrap gap-4 mt-12'>
+            <button 
+              className="px-8 py-2.5 text-blue-600 text-sm rounded-full hover:scale-105 transition-all duration-700"
+              style={{
+                border: "2px solid #3B82F6", // Border color (blue)
+              }}
+            >
+              Try another Image
+            </button>
 
-            <a className="upload-button hover:scale-105 transition-all duration-700" href=""><FiDownload className="upload-icon" /> Download Image</a>
-          </div>
+            <a href={resultImage} download className="upload-button hover:scale-105 transition-all duration-700"><FiDownload className="upload-icon" /> Download Image</a>
+          </div>}
         </div>
       </div>
     </div>

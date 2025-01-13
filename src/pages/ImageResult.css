@@ -69,21 +69,6 @@
   margin-top: 32%;
 }
 
-.upload-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #6bd66b;
-  color: #ffffff;
-  border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
 .supported-formats {
   font-size: 14px;
   color: #b8b8b8;

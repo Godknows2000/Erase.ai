@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useClerk, useUser } from '@clerk/clerk-react';
 import Header from '../components/Header/Header';
 import Steps from '../components/Steps/Steps';
@@ -8,8 +8,11 @@ import HeroSection from '../components/HeroSection/HeroSection';
 import Footer from '../components/Footer/Footer';
 import bg_slider from "../assets/bg-removal-slider.png";
 import { IconLucideImagePlus } from '../components/IconLucideImagePlus';
+import { AppContext } from '../context/appContext';
 
 const Home = () => {
+  const {removeBackground} = useContext(AppContext)
+
   const styles = {
     buttonContainer: {
       textAlign: "center",
@@ -62,9 +65,16 @@ const Home = () => {
           height: "100%",
           margin: "10px"
         }}>
-          <button className="upload-button">
-            <IconLucideImagePlus style={styles.icon} /> Upload Image
-          </button>
+          <input
+          onChange={e => removeBackground(e.target.files[0])}
+            type="file"
+            id="upload"
+            accept='image/*'
+            hidden
+          />
+        <label className="upload-button" htmlFor="upload">
+          <IconLucideImagePlus style={{ fontSize: '24px' }} /> Upload Image
+        </label>
         </div>
         <p className="supported-formats">
           Supported formats: <b>JPG, JPEG, PNG, WebP</b>

@@ -112,12 +112,12 @@ const ImageResult = () => {
                   !resultImage && image && <div className="absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2">
                   <div
                     style={{
-                      border: "4px solid #0000ff", // Violet border color
-                      borderTop: "4px solid transparent", // Transparent top border to create the spinning effect
-                      borderRadius: "9999px", // Full circle (rounded)
-                      height: "3rem", // 12 * 0.25rem = 3rem
-                      width: "3rem", // 12 * 0.25rem = 3rem
-                      animation: "spin 1s linear infinite", // Spinning animation
+                      border: "4px solid #0000ff",
+                      borderTop: "4px solid transparent",
+                      borderRadius: "9999px",
+                      height: "3rem",
+                      width: "3rem",
+                      animation: "spin 1s linear infinite",
                     }}
                   ></div>
                 </div> 
@@ -129,7 +129,7 @@ const ImageResult = () => {
             <button 
               className="px-8 py-2.5 text-blue-600 text-sm rounded-full hover:scale-105 transition-all duration-700"
               style={{
-                border: "2px solid #3B82F6", // Border color (blue)
+                border: "2px solid #3B82F6",
               }}
             >
               Try another Image

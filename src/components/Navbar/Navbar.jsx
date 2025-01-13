@@ -100,7 +100,7 @@ const Navbar = () => {
             <Link
               to="/upload"
               className={`navbar-link text-sm font-medium text-gray-700 hover:text-blue-700 transition duration-300 ${
-                isActiveLink('/upload') ? 'active-link' : ''
+                isActiveLink('/imageresult') ? 'active-link' : ''
               }`}
             >
               Uploaded Images

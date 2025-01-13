@@ -95,13 +95,13 @@
   margin-left: 8px; /* Space between icon and text */
 } 
 
-.upload-button {
+.upload-button-1 {
   background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%); /* Light blue to dark blue gradient */
   color: white;
   font-size: 14px;
-  padding: 10px 20px;
+  padding: 20px 20px;
   border: none;
-  border-radius: 25px; /* Radial button */
+  border-radius: 35px; /* Radial button */
   display: flex;
   align-items: center;
   cursor: pointer;

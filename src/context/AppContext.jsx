@@ -59,7 +59,7 @@ const AppContextProvider = (props) => {
             image && formData.append('image', image)
 
 
-            const {data} = await axios.post(backedUrl+'/api/image/remove-background', formData, {
+            const {data} = await axios.post(backendUrl+'/api/image/remove-background', formData, {
                 headers: {token}
             })
 

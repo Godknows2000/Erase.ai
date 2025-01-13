@@ -105,7 +105,7 @@ const ImageResult = () => {
 
             <div>
               <p className="text-start font-semibold text-white-600 mb-2">Background Removed</p>
-              <div className={`rounded-md border h-full ${resultImage && 'bg-layer'} border-gray-300 relative overflow-hidden`}>
+              <div className={`rounded-md border h-full ${image && 'bg-layer'} border-gray-300 relative overflow-hidden`}>
                 <img className="rounded-md border-solid" src={resultImage ? resultImage : ''} alt="" />
                 {
                   !resultImage && image && <div className="absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2">
@@ -124,7 +124,7 @@ const ImageResult = () => {
                 </div>
               </div>
             </div>
-            { resultImage &&  <div className='flex justify-center sm:justify-end items-centerflex-wrap gap-4 mt-12'>
+            {image && <div className='flex justify-center sm:justify-end items-centerflex-wrap gap-4 mt-12'>
             <button 
               className="px-8 py-2.5 text-blue-600 text-sm rounded-full hover:scale-105 transition-all duration-700"
               style={{
@@ -134,7 +134,7 @@ const ImageResult = () => {
               Try another Image
             </button>
 
-            <a href={resultImage} download className="upload-button hover:scale-105 transition-all duration-700"><FiDownload className="upload-icon" /> Download Image</a>
+            <a href={resultImage} download className="upload-button-1 hover:scale-105 transition-all duration-700"><FiDownload className="upload-icon me-2" /> Download Image</a>
           </div>}
         </div>
       </div>

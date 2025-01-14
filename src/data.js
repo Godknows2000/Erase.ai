@@ -29,10 +29,5 @@ export const socialHandles = [
     name: "LinkedIn",
     icon: <AiFillLinkedin />,
     link: "https://www.linkedin.com/in/godknows-aresho-1231361b1/",
-  },
-  {
-    name: "Youtube",
-    icon: <AiFillYoutube />,
-    link: "https://www.youtube.com/",
-  },
+  }
 ];

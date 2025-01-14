@@ -13,16 +13,3 @@ export const menu = [
   { name: "Testimonial" },
   { name: "Contact" },
 ];
-
-export const socialHandles = [
-  {
-    name: "Fiverr",
-    icon: <SiFiverr />,
-    link: "https://www.fiverr.com/godknows01?up_rollout=true",
-  },
-  {
-    name: "Github",
-    icon: <AiFillGithub />,
-    link: "https://github.com/Godknows2000",
-  },
-];

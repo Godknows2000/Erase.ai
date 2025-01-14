@@ -25,9 +25,4 @@ export const socialHandles = [
     icon: <AiFillGithub />,
     link: "https://github.com/Godknows2000",
   },
-  {
-    name: "LinkedIn",
-    icon: <AiFillLinkedin />,
-    link: "https://www.linkedin.com/in/godknows-aresho-1231361b1/",
-  }
 ];

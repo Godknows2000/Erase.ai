@@ -73,7 +73,6 @@ const clerkWebhooks = async (req, res) => {
     } catch (error) {
         console.error(error);
 
-        // Check if headers are already sent before sending an error response
         if (!res.headersSent) {
             res.status(500).json({ success: false, message: error.message });
         }

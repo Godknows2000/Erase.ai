@@ -35,7 +35,6 @@ const clerkWebhooks = async (req, res) => {
 
         const { data, type } = verifiedPayload;
 
-        // Process the webhook payload asynchronously
         switch (type) {
             case 'user.created':
                 await userModel.create({

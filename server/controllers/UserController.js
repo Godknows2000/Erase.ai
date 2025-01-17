@@ -30,7 +30,6 @@ const clerkWebhooks = async (req, res) => {
 
         console.log("Verified Payload:", verifiedPayload);
 
-        // Send a response immediately
         res.status(200).json({ success: true });
 
         const { data, type } = verifiedPayload;

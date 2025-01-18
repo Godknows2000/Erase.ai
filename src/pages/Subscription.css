@@ -103,7 +103,7 @@
     background: #333;
   }
   
-  .upload-button {
+  .upload-button-2 {
     background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%);
     color: white;
     font-size: 14px;
@@ -112,6 +112,7 @@
     border: none;
     border-radius: 25px;
     display: flex;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: background 0.3s ease;

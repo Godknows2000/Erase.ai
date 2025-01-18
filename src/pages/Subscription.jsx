@@ -16,7 +16,7 @@ const Subscription = () => {
           <h3 className="plan-name">Bronze</h3>
           <p className="plan-description">For solo personal use</p>
           <h2 className="price">$5 <span className="currency">USD</span></h2>
-          <button className="upload-button hover:scale-105 transition-all duration-700 cta-btn">Get Started</button>
+          <button className="upload-button-2 hover:scale-105 transition-all duration-700 cta-btn">Get Started</button>
         </div>
 
         <div className="card popular">
@@ -24,7 +24,7 @@ const Subscription = () => {
           <h3 className="plan-name">Silver</h3>
           <p className="plan-description">For small teams</p>
           <h2 className="price">$10 <span className="currency">USD</span></h2>
-          <button className="upload-button hover:scale-105 transition-all duration-700 cta-btn">Get Started</button>
+          <button className="upload-button-2 hover:scale-105 transition-all duration-700 cta-btn">Get Started</button>
         </div>
 
         <div className="card">
@@ -32,7 +32,7 @@ const Subscription = () => {
           <h3 className="plan-name">Gold</h3>
           <p className="plan-description">As your business scales</p>
           <h2 className="price">$50 <span className="currency">USD</span></h2>
-          <button className="upload-button hover:scale-105 transition-all duration-700 cta-btn">Get Started</button>
+          <button className="upload-button-2 hover:scale-105 transition-all duration-700 cta-btn">Get Started</button>
         </div>
       </div>
     </div>

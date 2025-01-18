@@ -172,28 +172,25 @@
     align-items: start;
   }
   
-/* Sign Up button styling */
 .upload-button {
-    background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%); /* Light blue to dark blue gradient */
+    background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%);
     color: white;
     font-size: 16px;
     padding: 10px 20px;
     border: none;
-    border-radius: 10px; /* Radial button */
+    border-radius: 10px;
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: background 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Optional shadow */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
   }
   
-  /* Button hover effect */
   .upload-button:hover {
-    background: linear-gradient(135deg, #010747, #013bf7); /* Reversed gradient on hover */
+    background: linear-gradient(135deg, #010747, #013bf7);
   }
   
-  /* Icon in the button */
   .upload-icon {
-    margin-left: 8px; /* Space between icon and text */
+    margin-left: 8px;
   }  
   

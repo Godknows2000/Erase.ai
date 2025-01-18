@@ -1,5 +1,5 @@
 .footer {
-    background-color: #0f111a; /* Dark navy background */
+    background-color: #0f111a;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -33,6 +33,6 @@
   }
   
   .right a:hover {
-    color: #ffffff; /* Change to white on hover */
+    color: #ffffff;
   }
   

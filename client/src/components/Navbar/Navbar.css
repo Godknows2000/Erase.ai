@@ -123,6 +123,21 @@
   transition: background 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Optional shadow */
   }
+
+  .user-circle {
+    background: linear-gradient(260deg, #0d0155 0%, #3b3bf4 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 50px;  /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+    color: white; /* Text color */
+    font-weight: bold; /* Adjust text styling */
+    cursor: pointer;
+    text-align: center;
+  }
+  
   
   /* Button hover effect */
   .signup-button:hover {
@@ -132,6 +147,15 @@
   /* Icon in the button */
   .signup-icon {
   margin-right: 8px; /* Space between icon and text */
+  }
+
+  .credit-tagline {
+    font-size: 14px;
+    color: #ffffff;
+    background: #232e45;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 200;
   }
 
   .logo h1 {
@@ -150,7 +174,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 600;
-      border-bottom: 2px solid #3b3bf4; /* Solid blue border for underline */
+      border-bottom: 1px solid #3b3bf4; /* Solid blue border for underline */
     }
 
 @media (max-width: 900px) {

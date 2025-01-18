@@ -1,6 +1,5 @@
 import * as React from "react";
 
-// By: lucide
 // See: https://v0.app/icon/lucide/image-plus
 // Example: <IconLucideImagePlus width="24px" height="24px" style={{color: "#000000"}} />
 

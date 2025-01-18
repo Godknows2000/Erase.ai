@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
 import { FaUserPlus, FaTimes } from 'react-icons/fa';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import { FaBarsStaggered } from 'react-icons/fa6';
 import gsap from 'gsap';
@@ -50,6 +50,10 @@ const Navbar = () => {
   const { signOut } = useClerk();
   const { isSignedIn, user } = useUser();
   const {credit, loadCreditsData} = useContext(AppContext);
+
+  const navifate = useNavigate();
+
+
 
   useEffect(() => {
     if(isSignedIn)
@@ -156,7 +160,7 @@ const Navbar = () => {
       <div className="nav__buttons__group">
         {isSignedIn ? (
           <div className="user-container flex items-center gap-2 sm:gap-7">
-            <button className="credit-tagline flex items-center gap-2 px-4 sm:px-7 sm:py-2.5 shadow-md hover:scale-105 duration-700 transition-all">
+            <button onClick={()=>navigate('/subscription')} className="credit-tagline flex items-center gap-2 px-4 sm:px-7 sm:py-2.5 shadow-md hover:scale-105 duration-700 transition-all">
               <FaCoins className="credit-icon w-6 h-6 text-yellow-500" />
               <p className="text-sm font-medium text-white">
                 Credits: {credit}

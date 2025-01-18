@@ -26,12 +26,16 @@ const removeBackgroundImage = async (req, res) => {
 
         formData.append('image_file', imageFile)
 
-        const {data} = await axios.post('https://clipdrop-api.co/remove-background/v1', formData, {
-            headers:{
+        const {data, status} = await axios.post('https://clipdrop-api.co/remove-background/v1', formData, {
+            headers: {
                 'x-api-key': process.env.CLICKDROP_API,
             },
             responseType: 'arraybuffer'
-        })
+        }).catch(error => {
+            console.error('Error with Clipdrop API:', error.response ? error.response.data : error.message);
+            res.json({ success: false, message: 'Error with Clipdrop API', details: error.response ? error.response.data : error.message });
+            return;
+        });        
 
         const base64Image = Buffer.from(data, 'binary').toString('base64')
 

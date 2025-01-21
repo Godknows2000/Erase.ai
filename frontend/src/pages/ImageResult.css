@@ -87,7 +87,7 @@
   border-radius: 8px; /* Rounded corners for the image */
   width: 100%; /* Full width of the container */
   height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Ensure images scale correctly */
+  object-fit: contain; 
 }
 
 .upload-icon {

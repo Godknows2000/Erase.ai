@@ -84,7 +84,7 @@
 }
 
 .image-container img {
-  border-radius: 8px; /* Rounded corners for the image */
+  border-radius: 8px;
   width: 100%;
   height: auto;
   object-fit: contain; 

@@ -77,10 +77,10 @@
 
 /* Style for image containers */
 .image-container {
-  border: 1px solid #D1D5DB; /* Light Gray border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 0px; /* Padding inside the container */
-  overflow: hidden; /* Ensure the content fits well */
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  padding: 0px;
+  overflow: hidden;
 }
 
 /* Style for images inside the container */

@@ -83,7 +83,6 @@
   overflow: hidden;
 }
 
-/* Style for images inside the container */
 .image-container img {
   border-radius: 8px; /* Rounded corners for the image */
   width: 100%; /* Full width of the container */

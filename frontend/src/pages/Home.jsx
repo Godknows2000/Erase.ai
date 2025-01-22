@@ -88,7 +88,7 @@ const Home = () => {
   // Redirect the user as soon as they are signed in
   useEffect(() => {
     if (isSignedIn) {
-      navigate('/'); // Redirect to the desired page after login
+      navigate('/');
     }
   }, [isSignedIn, navigate]);
 

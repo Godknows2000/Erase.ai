@@ -94,7 +94,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* Conditionally render content based on sign-in status */}
       {!isSignedIn ? (
         <>
           <Header />

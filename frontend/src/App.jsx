@@ -27,7 +27,7 @@ const App = () => {
       color: '#ffffff',
       textAlign: 'center',
       padding: '10px 20px',
-      marginTop: 'auto', // Ensures the footer sticks to the bottom
+      marginTop: 'auto',
     },
     // navbar: {
     //   position: 'sticky',

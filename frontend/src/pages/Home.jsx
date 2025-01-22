@@ -73,7 +73,7 @@ const Home = () => {
             hidden
           />
         <label className="upload-button" htmlFor="upload">
-          <IconLucideImagePlus style={{ fontSize: '24px' }} /> Upload Image
+          <IconLucideImagePlus style={{ fontSize: '17px' }} /> Upload Image
         </label>
         </div>
         <p className="supported-formats">

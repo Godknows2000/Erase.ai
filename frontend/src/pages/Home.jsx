@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
-import { useClerk, useUser } from '@clerk/clerk-react';
+import React, { useContext, useEffect } from 'react';
+import { useUser } from '@clerk/clerk-react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Steps from '../components/Steps/Steps';
 import BgSlider from '../components/BgSlider/BgSlider';
@@ -11,7 +12,9 @@ import { IconLucideImagePlus } from '../components/IconLucideImagePlus';
 import { AppContext } from '../context/appContext';
 
 const Home = () => {
-  const {removeBackground} = useContext(AppContext)
+  const { removeBackground } = useContext(AppContext);
+  const { isSignedIn } = useUser();  // Check if the user is signed in
+  const navigate = useNavigate();  // Hook to handle navigation
 
   const styles = {
     buttonContainer: {
@@ -40,70 +43,70 @@ const Home = () => {
     },
   };
 
-  const { isSignedIn } = useUser();  // Check if the user is signed in
-
-  // The content for background removal (this will show when logged in)
   const bgRemoverContent = (
     <div className="card-container-1">
       <p className='text-start text-blue-700 mt-6 text-2xl font-extrabold mb-8 bg-clip-text'>Remove Your Image Background</p>
-  <div className="bg-remover-content-1">
-    <div className="image-preview">
-      <img
-        src={bg_slider}  // Assuming bg_slider is your image source
-        alt="Example of background removed"
-      />
-    </div>
-    <div className="hero-container-1">
-      <div className="upload-box-1">
-        <div className="upload-instructions">
-          <p>Drag and drop your image here</p>
-        </div>
-        <div style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100%",
-          margin: "10px"
-        }}>
-          <input
-          onChange={e => removeBackground(e.target.files[0])}
-            type="file"
-            id="upload"
-            accept='image/*'
-            hidden
+      <div className="bg-remover-content-1">
+        <div className="image-preview">
+          <img
+            src={bg_slider}  // Assuming bg_slider is your image source
+            alt="Example of background removed"
           />
-        <label className="upload-button" htmlFor="upload">
-          <IconLucideImagePlus style={{ fontSize: '17px' }} /> Upload Image
-        </label>
         </div>
-        <p className="supported-formats">
-          Supported formats: <b>JPG, JPEG, PNG, WebP</b>
-        </p>
+        <div className="hero-container-1">
+          <div className="upload-box-1">
+            <div className="upload-instructions">
+              <p>Drag and drop your image here</p>
+            </div>
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%",
+              margin: "10px"
+            }}>
+              <input
+                onChange={e => removeBackground(e.target.files[0])}
+                type="file"
+                id="upload"
+                accept='image/*'
+                hidden
+              />
+              <label className="upload-button" htmlFor="upload">
+                <IconLucideImagePlus style={{ fontSize: '17px' }} /> Upload Image
+              </label>
+            </div>
+            <p className="supported-formats">
+              Supported formats: <b>JPG, JPEG, PNG, WebP</b>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
   );
+
+  // Automatically redirect to the project page if logged in
+  useEffect(() => {
+    if (isSignedIn) {
+      // Redirect logged-in users to their project page (or dashboard)
+      navigate('/project'); // Example path, update as needed
+    }
+  }, [isSignedIn, navigate]);
 
   return (
     <div>
-      
       {/* Conditionally render content based on sign-in status */}
-      {isSignedIn ? (
-        // Render background removal content if signed in
-        <>
-          {bgRemoverContent}
-        </>
-      ) : (
-        // Render landing page content if not signed in
+      {!isSignedIn ? (
         <>
           <Header />
           <Steps />
           <BgSlider />
           <Testimonials />
         </>
+      ) : (
+        <>{bgRemoverContent}</>
       )}
-      
+
       <HeroSection />
     </div>
   );

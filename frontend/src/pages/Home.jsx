@@ -85,7 +85,6 @@ const Home = () => {
     </div>
   );
 
-  // Redirect the user as soon as they are signed in
   useEffect(() => {
     if (isSignedIn) {
       navigate('/');

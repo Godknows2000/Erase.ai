@@ -75,7 +75,6 @@
   padding-top: 10px;
 }
 
-/* Style for image containers */
 .image-container {
   border: 1px solid #D1D5DB;
   border-radius: 8px;
@@ -105,5 +104,5 @@
   align-items: center;
   cursor: pointer;
   transition: background 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Optional shadow */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
 }

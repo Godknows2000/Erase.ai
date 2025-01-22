@@ -85,11 +85,10 @@ const Home = () => {
     </div>
   );
 
-  // Automatically redirect to the project page if logged in
+  // Redirect the user as soon as they are signed in
   useEffect(() => {
     if (isSignedIn) {
-      // Redirect logged-in users to their project page (or dashboard)
-      navigate('/project'); // Example path, update as needed
+      navigate('/'); // Redirect to the desired page after login
     }
   }, [isSignedIn, navigate]);
 

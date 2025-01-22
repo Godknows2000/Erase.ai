@@ -23,7 +23,7 @@ const App = () => {
       padding: '0px',
     },
     footer: {
-      backgroundColor: '#0b1221', // Footer background color
+      backgroundColor: '#0b1221',
       color: '#ffffff',
       textAlign: 'center',
       padding: '10px 20px',

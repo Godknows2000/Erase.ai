@@ -15,7 +15,7 @@ const App = () => {
     appContainer: {
       display: 'flex',
       flexDirection: 'column',
-      minHeight: '100vh', // Full viewport height
+      minHeight: '100vh',
     },
     content: {
       flex: 1, // Allow this section to grow and take up available space

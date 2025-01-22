@@ -18,9 +18,9 @@ const App = () => {
       minHeight: '100vh',
     },
     content: {
-      flex: 1, // Allow this section to grow and take up available space
-      overflowY: 'auto', // Enable scrolling for the content
-      padding: '0px', // Optional padding for spacing
+      flex: 1,
+      overflowY: 'auto',
+      padding: '0px',
     },
     footer: {
       backgroundColor: '#0b1221', // Footer background color

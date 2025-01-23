@@ -1,5 +1,5 @@
 import React from "react";
-import { FaUpload, FaMagic, FaDownload } from "react-icons/fa"; // Icons for each step
+import { FaUpload, FaMagic, FaDownload } from "react-icons/fa";
 import './Steps.css';
 
 const Steps = () => {

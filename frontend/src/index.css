@@ -255,9 +255,6 @@ img {
 .odometer.odometer-theme-default .odometer-digit .odometer-digit-spacer {
   display: inline-block;
   vertical-align: middle;
-  /* *vertical-align: auto;
-  *zoom: 1;
-  *display: inline; */
   visibility: hidden;
 }
 .odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner,

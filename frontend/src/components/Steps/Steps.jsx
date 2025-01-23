@@ -42,7 +42,6 @@ const Steps = () => {
                 </div>
             </div>
 
-            {/* Card 3 */}
             <div className="card flex items-start gap-4 p-7 pb-10 rounded-lg border-2 border-blue-600 drop-shadow-md hover:scale-105 transition-all duration-500 w-full sm:w-[90%] md:w-[70%] lg:w-1/3">
                 <div className="icon-container">
                 <FaDownload size={30} color="#024CC8" />

@@ -1,7 +1,6 @@
 import * as React from "react";
 
 // See: https://v0.app/icon/lucide/image-plus
-// Example: <IconLucideImagePlus width="24px" height="24px" style={{color: "#000000"}} />
 
 export const IconLucideImagePlus = ({
   height = "1em",

@@ -32,7 +32,7 @@ const App = () => {
     // navbar: {
     //   position: 'sticky',
     //   top: 0, // Keeps navbar at the top when scrolling
-    //   backgroundColor: '#080c16', // Navbar background color
+    //   backgroundColor: '#080c16',
     //   zIndex: 1000,
     //   width: '100%',
     // },

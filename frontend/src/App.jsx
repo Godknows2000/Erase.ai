@@ -33,7 +33,7 @@ const App = () => {
     //   position: 'sticky',
     //   top: 0, // Keeps navbar at the top when scrolling
     //   backgroundColor: '#080c16', // Navbar background color
-    //   zIndex: 1000, // Ensures navbar stays on top of the content
+    //   zIndex: 1000,
     //   width: '100%',
     // },
   };

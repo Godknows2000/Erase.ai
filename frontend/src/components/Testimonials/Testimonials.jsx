@@ -4,7 +4,7 @@ import "./Testimonials.css";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Godknows Aresho",
+      name: "Amos Machokoto",
       role: "Software Developer",
       quote:
         "This tool has completely transformed how we showcase our products. The background removal is so accurate and fast—it’s like having a professional editor at my fingertips!",

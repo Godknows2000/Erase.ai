@@ -49,7 +49,7 @@ const Home = () => {
       <div className="bg-remover-content-1">
         <div className="image-preview">
           <img
-            src={bg_slider}  // Assuming bg_slider is your image source
+            src={bg_slider}
             alt="Example of background removed"
           />
         </div>

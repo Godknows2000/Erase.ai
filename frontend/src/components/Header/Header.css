@@ -147,10 +147,6 @@
   }
 
   @media (min-width: 768px) {
-    /* #header .header__title {
-      font-size: 36px;
-      text-align: start;
-    } */
     #header .header__description {
       font-size: 18px;
       text-align: start;

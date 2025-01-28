@@ -25,7 +25,7 @@ const HeroSection = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            height: "100%", // Adjust as needed
+            height: "100%",
         }}
         >
         <button

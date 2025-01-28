@@ -32,11 +32,11 @@ const Header = () => {
             <div className="header__info__middle">
               <h1 className="primary__title header__title">
                 Professional-Quality Background Removal Made Easy.
-                <Cursor
+                {/* <Cursor
                   cursorStyle="|"
                   cursorColor="#024CC8"
                   className="color__primary"
-                />
+                /> */}
               </h1>
               <p className="text__muted header__description">
                 Transform Your Photos Instantly with AI-Powered Background Removal. Get Perfect Images with Just One Click!
